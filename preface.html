@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>preface</title>
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+  <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #b8b8b8;
+  font-family: 'Noto Sans KR', sans-serif; /* ✅ 본문 폰트 */
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      z-index: 0;
+    }
+
+.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* 가운데 정렬 */
+      font-family: 'Tangerine', cursive;
+      font-weight: bold;
+      z-index: 1000;
+      font-size: 36px;
+      backdrop-filter: blur(10px);              /* 블러 효과 */
+-webkit-backdrop-filter: blur(10px);      /* 사파리 대응 */
+ border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ff00bf;
+    }
+
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      height: 100vh;
+      padding-top: 60px;
+      z-index: 10;
+      position: relative;
+    }
+
+
+    .container {
+      width: 700px;
+      margin: 0 auto;
+      padding: 120px 20px 200px 20px;
+    }
+.section-small {
+  margin-bottom: 100px;
+}
+.section {
+  margin-bottom: 200px;
+}
+.section-big {
+  margin-bottom: 300px;
+}
+.section-verybig {
+  margin-bottom: 600px;
+}
+    .text-left {
+      text-align: left;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .text-right {
+      text-align: right;
+    }
+        .highlight-blue {
+      color: #3bebff;
+        }
+.curve-arc {
+  position: absolute;
+  top: 2300px; /* 원하는 위치로 조정 */
+  left: 0;
+  width: 100vw; /* 브라우저 너비 전체 */
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.curve-arc svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+  padding: 40px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #3c3c3c;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 100px; /* 위 내용과 여백 주고 싶다면 */
+}
+
+
+
+  </style>
+</head>
+<body>
+<div class="navbar">
+   <a href="index.html">The Rotating Disc <span class="highlight-blue">Preface</span></a>
+  </div>
+
+  <div class="section-small"></div>
+<div class="container">
+  <div class="section">
+  <p class="text-left"><span class="highlight-blue">세계는 회전한다.</span></p>
+  <p class="text-center">우리는 같은 공간에 존재하면서도 말은 비껴가고,<br>
+    표정은 오해되고, 사랑은 엇나가며 휘어진다.</p>
+</div>
+
+  <div class="section-big">
+  <p class="text-left"><span class="highlight-blue">우리가 서 있는 곳은</span></p>
+  <h1 class="text-center"><span class="highlight-blue">거대한 회전 원판.</span></h1>
+  </div>
+
+  <div class="section">
+  <p class="text-center">우리는  자신을  완전한  개별자라고
+    <br>생각하고 내가 느끼는 감정,
+    <br>내가  건네는 말, 내가 지닌 나라는 존재는
+    <br>곧고 정확하게 닿을 수 있으리라 믿는다.<br></p>
+ </div>
+
+  <div class="section-big">
+  <h1 class="text-center"><span class="highlight-blue">그러나 세계는 회전한다.
+    <br>나의 감정과 의도는<br>기대와는 다른 곡선을 그리며,</span></h1>
+ </div>
+
+ <div class="section">
+  <p class="text-right"><span class="highlight-blue">나의 말은 너에게 닿기 전에 휘어진다.<br>휘어짐은 우리의 실수가 아니지만,<br>그것을 받아들이기란 쉽지 않을지도 모른다.</span></p>
+</div>
+
+ <div class="section-verybig">
+  <p class="text-center">코리올리 힘처럼,<br>휘어짐은 시스템 안의
+    <br>조건이자 <span class="highlight-blue">인간의<br>존재 방식이다.</span></p>
+</div>
+
+<div class="curve-arc">
+  <svg viewBox="0 0 1000 500" preserveAspectRatio="none">
+    <path d="M0,500 Q500,0 1000,500" stroke="#3bebff" stroke-width="1" fill="none" />
+  </svg>
+</div>
+
+ <div class="section">
+    <p class="text-left">그러나,</p>
+<p class="text-left">어떻게 휘어짐과 공존할지는<br>아직 우리에게 막막하기만 하다.</p>
+</div>
+
+<div class="circle-background"></div>
+
+ <div class="section">
+  <p class="text-center"><span class="highlight-blue">이 이야기는 가장 가까운 사람과조차<br>왜 우리는 온전히 통하지 못하는지를 묻는다.
+    <br>그리고 그 휘어짐 속에서, 비로소<br>서로를 이해하게 되는 과정을 따라간다.</span></p>
+</div>
+
+ <div class="section-big">
+  <p class="text-center">결국 소통은 직선이 아닌, 서로의<br>곡선을 이해하고 그 위에서 함께<br>움직이는 예술이 될 수 있을 것이며,</p>
+</div>
+
+ <div class="section-big">
+  <h1 class="text-center"><span class="highlight-blue">그 곡선 위에서 비로소<br>우린 서로를 ‘진짜로'<br>만나게 될 것이다.</span></h1>
+</div>
+</div>
+
+<footer class="footer">
+  <p>© 2025 The Rotating Disc. All rights reserved. Team Nemoane.</p>
+</footer>
+
+</body>
+</html>

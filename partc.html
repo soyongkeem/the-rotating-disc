@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Part C</title>
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        #e2e2e2,
+        #e2e2e2 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Tangerine', cursive;
+      font-weight: bold;
+      font-size: 36px;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff00bf;
+    }
+
+    .highlight-blue {
+      color: #3bebff;
+    }
+
+    .section {
+      width: 100%;
+      padding: 200px 0;
+      position: relative;
+    }
+
+    .section.black {
+      background: #000;
+      color: #fff;
+      height: calc(100vh - 260px);
+      display: flex;
+      align-items: center;
+    }
+
+    .section-content {
+      display: flex;
+      width: 1100px;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .left {
+      width: 50%;
+      padding: 0 60px;
+      box-sizing: border-box;
+    }
+.right {
+  width: 50%;
+  padding: 0 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10%;
+}
+    .left img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      width: 100%;
+      padding: 40px 10px;
+      text-align: center;
+      font-size: 14px;
+      color: darkgray;
+      background: #e2e2e2;
+      margin-top: 100px;
+      z-index: 999;
+    }
+
+    #loading-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      color: #ff00bf;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar hidden" id="navbar">
+    <a href="index.html">The Rotating Disc <span class="highlight-blue">Part C</span></a>
+  </div>
+
+  <div id="loading-text">로딩 중...</div>
+
+  <section class="section black" id="first-section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-graphic.png" alt="그래픽">
+      </div>
+      <div class="right">
+        <div class="title">원판에서 내릴 수 있을까?</div>
+        <p>우리는 <strong>원판</strong>이라는 공간 위에 서 있다.</p>
+        <p>회전적으로는 자유,<br>
+        사회적으로는 시스템,<br>
+        실현적 측면은 시뮬레이크로 볼 수 있다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-01.png" alt="도형1">
+      </div>
+      <div class="right">
+        <div class="title">01 우리가 서 있는 곳</div>
+        <p>회전하는 원판에서 숨을 가쁘게 몰아쉬고 있는 우리는<br>
+        더 이상 멈춰 설 수 없게 된 상황에 있다.</p>
+        <p>원판의 회전은 끊임없고,<br>
+        우리는 그 속에 내던져진 존재다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-02.png" alt="도형2">
+      </div>
+      <div class="right">
+        <p>이러한 공간은 내부적 논리에 따라 작동하며,<br>
+        우리로 하여금 사회적 역할과 임무를 부여받게끔 한다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-03.png" alt="도형3">
+      </div>
+      <div class="right">
+        <div class="title">02 원판에서 내리는 법</div>
+        <p>이 시스템을 이탈하고자 할 때<br>
+        우리는 종종 자신만의 전략을 구상한다.</p>
+        <p>하지만 그 전략조차 원판의 규칙에서 자유롭지 않으며,<br>
+        결국 또 다른 원판 위에서의 회전에 불과하다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-04.png" alt="도형4">
+      </div>
+      <div class="right">
+        <p>회전은 우리에게 무게와 과속의 부담을 새롭게 부과하며,<br>
+        우리는 그 속에서 또 다른 운동을 감내해야 한다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-05.png" alt="도형5">
+      </div>
+      <div class="right">
+        <div class="title">실현적 차원</div>
+        <p>실현적 차원에서는 시스템적 회전에서 벗어나기 위한<br>
+        새로운 시도가 필요하다.</p>
+        <p>이는 단순한 탈출이 아니라<br>
+        근본적 변화를 의미하는 도전이다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-06.png" alt="도형6">
+      </div>
+      <div class="right">
+        <div class="title">사회적 차원</div>
+        <p>사회적으로 시스템을 탈피해 서는 용기가 필요하다.<br>
+        새로운 관계와 새로운 규칙을 창조하며<br>
+        우리는 비로소 원판을 벗어날 수 있다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-content">
+      <div class="left">
+        <img src="c/partc-07.png" alt="도형7">
+      </div>
+      <div class="right">
+        <p>그러나 탈피 또한 또 다른 회전의 출발이 될 수 있다.<br>
+        변화와 회전은 동일한 궤적을 반복할 위험을 안고 있으며,<br>
+        이를 인식하는 시도가 진정한 변화로 이어진다.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 The Rotating Disc. All rights reserved. Team Nemoane.</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('loading-text').style.display = 'none';
+    };
+
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const firstSection = document.getElementById('first-section');
+      if (window.scrollY >= firstSection.clientHeight - 60) {
+        navbar.classList.remove('hidden');
+      } else {
+        navbar.classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>허브홈</title>
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100vh;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Tangerine', cursive;
+      font-weight: bold;
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+    
+    .big {
+            font-size: 40px;
+
+    }
+    .squished {
+      transform: scaleY(0.8);
+    }
+    .wrapper {
+      position: relative;
+      width: 800px;
+      height: 800px;
+    }
+
+    /* 안쪽 회전 점선 원 (시계 방향) */
+    .dotted-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 2px dashed #ffffff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 25s linear infinite;
+      z-index: 1;
+    }
+
+    /* 회전하는 바깥 점(dot) 원 - SVG */
+    .outer-circle {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotateReverse 40s linear infinite;
+      z-index: 0;
+    }
+
+
+    .outer-circle circle {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-dasharray: 1 15;
+      stroke-linecap: round;
+    }
+
+
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes rotateReverse {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes spinReverse {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(-360deg); }
+    }
+        @keyframes spin60 {
+      from { transform: rotate(60deg); }
+      to   { transform: rotate(420deg); }
+    }
+
+
+    /* 네 개 솔리드 원 */
+    .circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid #3bebff;
+      z-index: 2;
+    }
+
+    .circle.top    { top: 100px; left: 250px; }
+    .circle.bottom { top: 400px; left: 250px; }
+    .circle.left   { top: 250px; left: 100px; }
+    .circle.right  { top: 250px; left: 400px; }
+
+    /* 중앙 텍스트 */
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      z-index: 3;
+    }
+
+    /* 라벨 (A, B, C, About) */
+    .label {
+      position: absolute;
+      font-weight: bold;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .label.top {
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .label.bottom {
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .label.left {
+      left: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .label.right {
+      right: 65px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+}
+
+a.label:hover {
+  color: #ff00bf;
+  transition: color 0.3s ease;
+}
+
+/* 🎯 Preface에만 핑크 기본값 + hover 시 파란색 */
+a.center {
+  color: #ff00bf; /* 핑크 */
+  transition: color 0.3s ease;
+}
+a.center:hover {
+  color: #3bebff; /* 파랑 */
+}
+
+
+
+@media screen and (max-width: 600px) {
+ html, body {
+      height: 100vh;
+ }
+  .wrapper {
+    width: 100vw;
+    height: 100vw;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 바깥 회전 점(dot) 원 (반시계방향) -->
+     
+<svg class="outer-circle" viewBox="0 0 1000 1000">
+  <circle cx="500" cy="500" r="480" />
+</svg>
+
+
+    <!-- 안쪽 점선 원 (시계방향) -->
+    <div class="dotted-circle"></div>
+
+      <!-- 중심 텍스트 -->
+<a href="preface.html" class="center squished big">Preface</a>
+
+<!-- 방향 라벨 -->
+<a href="parta.html" class="label top squished">A</a>
+<a href="partb.html" class="label left squished">B</a>
+<a href="partc.html" class="label right squished">C</a>
+<a href="about.html" class="label bottom squished big">About</a>
+
+
+<!-- TOP 원 -->
+<svg viewBox="0 0 250 250" width="250" height="250"
+     style="position:absolute; top: 150px; left: 280px; z-index:2; animation: spin 16s linear infinite;">
+  <circle cx="125" cy="125" r="125"
+          fill="none" stroke="#3bebff" stroke-width="1.5"
+          stroke-dasharray="754" stroke-dashoffset="30"
+          stroke-linecap="round" transform="rotate(-45 125 125)" />
+</svg>
+
+<!-- BOTTOM 원 -->
+<svg viewBox="0 0 250 250" width="250" height="250"
+     style="position:absolute; top: 400px; left: 280px; z-index:2; animation: spinReverse 20s linear infinite;">
+  <circle cx="125" cy="125" r="125"
+          fill="none" stroke="#3bebff" stroke-width="1.5"
+          stroke-dasharray="754" stroke-dashoffset="30"
+          stroke-linecap="round" transform="rotate(-45 125 125)" />
+</svg>
+
+<!-- LEFT 원 -->
+<svg viewBox="0 0 250 250" width="250" height="250"
+     style="position:absolute; top: 280px; left: 150px; z-index:2; animation: spin 12s linear infinite;">
+  <circle cx="125" cy="125" r="125"
+          fill="none" stroke="#3bebff" stroke-width="1.5"
+          stroke-dasharray="754" stroke-dashoffset="30"
+          stroke-linecap="round" transform="rotate(-45 125 125)" />
+</svg>
+
+<!-- RIGHT 원 -->
+<svg viewBox="0 0 250 250" width="250" height="250"
+     style="position:absolute; top: 280px; left: 400px; z-index:2; animation: spinReverse 25s linear infinite;">
+  <circle cx="125" cy="125" r="125"
+          fill="none" stroke="#3bebff" stroke-width="1.5"
+          stroke-dasharray="754" stroke-dashoffset="30"
+          stroke-linecap="round" transform="rotate(-45 125 125)" />
+</svg>
+
+    </div>
+</body>
+</html>

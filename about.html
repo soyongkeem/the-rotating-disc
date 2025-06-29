@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>about</title>
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+  <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Noto Sans KR', sans-serif; /* ✅ 본문 폰트 */
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: auto;
+        text-align: center;
+  height: 100%;
+}
+body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.075);
+      z-index: 0;
+    }
+
+.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* 가운데 정렬 */
+      font-family: 'Tangerine', cursive;
+      font-weight: bold;
+      z-index: 1000;
+      font-size: 36px;
+      backdrop-filter: blur(10px);              /* 블러 효과 */
+-webkit-backdrop-filter: blur(10px);
+ border-bottom: 1px solid rgba(0, 0, 0, 0.1);      /* 사파리 대응 */
+  
+    }
+  .navbar a {
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ff00bf;
+    }
+
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      height: 100vh;
+      padding-top: 60px;
+      z-index: 10;
+      position: relative;
+    }
+
+
+    .container {
+      width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+        .highlight-blue {
+      color: #3bebff;
+        }
+
+.big {
+  margin-bottom: 80px;
+}
+
+.curve-arc {
+  position: absolute;
+  top: 2100px; /* 원하는 위치로 조정 */
+  left: 0;
+  width: 100vw; /* 브라우저 너비 전체 */
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.curve-arc svg {
+  width: 100%;
+  height: 100%;
+}
+
+.project-link {
+  color: #00aec2;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.project-link:hover {
+  color: #ff00bf;
+}
+
+
+.footer {
+  width: 100%;
+  padding: 40px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: darkgray;
+  background-color: #e2e2e2;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 100px; /* 위 내용과 여백 주고 싶다면 */
+}
+
+
+  </style>
+</head>
+<body>
+<div class="navbar">
+   <a href="index.html">The Rotating Disc <span class="highlight-blue">Preface</span></a>
+  </div>
+  
+<div class="container">
+
+  <h2>원판 The Rotating Disc</h2>
+  <div class="big">
+  <p>이 프로젝트는 서울과학기술대학교 조형대학 <br>
+    시각디자인전공 촬영 연구 학회 네모아네의 <br>
+    2025년 상반기 프로젝트 중 하나로 제작되었습니다.</p>
+<p><a href="https://your-project-link.com" class="project-link">모든 프로젝트 보러가기</a></p>
+</div>
+  <p><strong>Team NEMOANE</strong></p>
+  <p><strong>Head Director</strong><br>김서영</p>
+  <p><strong>Director</strong><br>양지연<br>김다훤<br>김수빈</p>
+<p><strong>Assistant</strong><br>손영현<br>조은비</p>
+<p><strong>Web Design</strong><br>김수빈<br>김서영</p>
+<p><strong>Graphic Design</strong><br>양지연</p>
+
+</div>
+<div id="footer-trigger"></div>
+
+
+<footer class="footer">
+  <p>© 2025 The Rotating Disc. All rights reserved. Team Nemoane.</p>
+</footer>
+
+
+</body>
+</html>
