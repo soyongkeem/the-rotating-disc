@@ -80,7 +80,14 @@
       color: #fff;
       height: calc(100vh - 260px);
       display: flex;
-      align-items: center;
+      align-items: flex-start;  /* 가운데 -> 위쪽 맞춤 */
+    }
+
+    .section.black .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;  /* 위쪽 정렬 */
+      margin-top: 16px;               /* 혹시 기존 여백 제거 */
     }
 
     .section-content {
@@ -96,24 +103,34 @@
       padding: 0 60px;
       box-sizing: border-box;
     }
-.right {
-  width: 50%;
-  padding: 0 60px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 10%;
-}
+
     .left img {
       max-width: 100%;
       height: auto;
+      display: block;
+    }
+
+    .right {
+      width: 50%;
+      padding: 0 60px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 10%;
     }
 
     .title {
       font-size: 28px;
       font-weight: bold;
       margin-bottom: 20px;
+    }
+
+    .partc-banner img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
     }
 
     .footer {
@@ -129,25 +146,78 @@
 
     #loading-text {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;          /* 검정 배경 */
       color: #ff00bf;
+      font-size: 20px;
       z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    .rotating-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      grid-gap: 20px;
+      width: 400px;
+    }
 
-    .partc-banner {
-  width: 100%;
-  position: relative;
-}
+    .circle-container {
+      width: 120px;
+      height: 120px;
+      border: 2px solid white;
+      border-radius: 50%;
+      position: relative;
+    }
 
-.partc-banner img {
-  width: 100%;    /* 가로 전체 꽉 차게 */
-  height: auto;   /* 비율 유지 */
-  display: block; /* 여백 제거 */
-}
+    .dot-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: spin linear infinite;
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      background-color: cyan;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center center;
+    }
+
+    .dot1 { transform: rotate(0deg) translateX(45px); }
+    .dot2 { transform: rotate(0deg) translateX(50px); }
+    .dot3 { transform: rotate(0deg) translateX(55px); }
+    .dot4 { transform: rotate(0deg) translateX(47px); }
+    .dot5 { transform: rotate(0deg) translateX(52px); }
+    .dot6 { transform: rotate(0deg) translateX(58px); }
+    .dot7 { transform: rotate(0deg) translateX(46px); }
+    .dot8 { transform: rotate(0deg) translateX(53px); }
+    .dot9 { transform: rotate(0deg) translateX(57px); }
+
+    .wrapper1 { animation-duration: 5s; animation-delay: 0s; }
+    .wrapper2 { animation-duration: 4.5s; animation-delay: -0.5s; }
+    .wrapper3 { animation-duration: 6s; animation-delay: -1s; }
+    .wrapper4 { animation-duration: 5.5s; animation-delay: -1.5s; }
+    .wrapper5 { animation-duration: 5s; animation-delay: -2s; }
+    .wrapper6 { animation-duration: 4s; animation-delay: -0.25s; }
+    .wrapper7 { animation-duration: 6.5s; animation-delay: -1.75s; }
+    .wrapper8 { animation-duration: 5s; animation-delay: -0.75s; }
+    .wrapper9 { animation-duration: 7s; animation-delay: -2.5s; }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -161,116 +231,96 @@
   <section class="section black" id="first-section">
     <div class="section-content">
       <div class="left">
-        <img src="c/partc-graphic.png" alt="그래픽">
+        <div class="rotating-grid">
+          <div class="circle-container"><div class="dot-wrapper wrapper1"><div class="dot dot1"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper2"><div class="dot dot2"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper3"><div class="dot dot3"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper4"><div class="dot dot4"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper5"><div class="dot dot5"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper6"><div class="dot dot6"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper7"><div class="dot dot7"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper8"><div class="dot dot8"></div></div></div>
+          <div class="circle-container"><div class="dot-wrapper wrapper9"><div class="dot dot9"></div></div></div>
+        </div>
       </div>
       <div class="right">
         <div class="title">원판에서 내릴 수 있을까?</div>
         <p>우리는 <strong>원판</strong>이라는 공간 위에 서 있다.</p>
-        <p>회전적으로는 자유,<br>
-        사회적으로는 시스템,<br>
-        실현적 측면은 시뮬레이크로 볼 수 있다.</p>
+        <p>회전적으로는 자유,<br>사회적으로는 시스템,<br>실현적 측면은 시뮬레이크로 볼 수 있다.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-01.png" alt="도형1">
-      </div>
+      <div class="left"><img src="c/partc-01.png" alt="도형1"></div>
       <div class="right">
         <div class="title">01 우리가 서 있는 곳</div>
-        <p>회전하는 원판에서 숨을 가쁘게 몰아쉬고 있는 우리는<br>
-        더 이상 멈춰 설 수 없게 된 상황에 있다.</p>
- <p>원판의 회전은 끊임없고,<br>
-        우리는 그 속에 내던져진 존재다.</p>
+        <p>회전하는 원판에서 숨을 가쁘게 몰아쉬고 있는 우리는<br>더 이상 멈춰 설 수 없게 된 상황에 있다.</p>
+        <p>원판의 회전은 끊임없고,<br>우리는 그 속에 내던져진 존재다.</p>
       </div>
     </div>
   </section>
 
-
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-02.png" alt="도형2">
-      </div>
+      <div class="left"><img src="c/partc-02.png" alt="도형2"></div>
       <div class="right">
-        <p>이러한 공간은 내부적 논리에 따라 작동하며,<br>
-        우리로 하여금 사회적 역할과 임무를 부여받게끔 한다.</p>
+        <p>이러한 공간은 내부적 논리에 따라 작동하며,<br>우리로 하여금 사회적 역할과 임무를 부여받게끔 한다.</p>
       </div>
     </div>
   </section>
 
-
-<div class="partc-banner">
-  <img src="c/partc-09.png" alt="2원판 배너">
-</div>
+  <div class="partc-banner">
+    <img src="c/partc-09.png" alt="2원판 배너">
+  </div>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-03.png" alt="도형3">
-      </div>
+      <div class="left"><img src="c/partc-03.png" alt="도형3"></div>
       <div class="right">
         <div class="title">02 원판에서 내리는 법</div>
-        <p>이 시스템을 이탈하고자 할 때<br>
-        우리는 종종 자신만의 전략을 구상한다.</p>
-        <p>하지만 그 전략조차 원판의 규칙에서 자유롭지 않으며,<br>
-        결국 또 다른 원판 위에서의 회전에 불과하다.</p>
+        <p>이 시스템을 이탈하고자 할 때<br>우리는 종종 자신만의 전략을 구상한다.</p>
+        <p>하지만 그 전략조차 원판의 규칙에서 자유롭지 않으며,<br>결국 또 다른 원판 위에서의 회전에 불과하다.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-04.png" alt="도형4">
-      </div>
+      <div class="left"><img src="c/partc-04.png" alt="도형4"></div>
       <div class="right">
-        <p>회전은 우리에게 무게와 과속의 부담을 새롭게 부과하며,<br>
-        우리는 그 속에서 또 다른 운동을 감내해야 한다.</p>
+        <p>회전은 우리에게 무게와 과속의 부담을 새롭게 부과하며,<br>우리는 그 속에서 또 다른 운동을 감내해야 한다.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-05.png" alt="도형5">
-      </div>
+      <div class="left"><img src="c/partc-05.png" alt="도형5"></div>
       <div class="right">
         <div class="title">실현적 차원</div>
-        <p>실현적 차원에서는 시스템적 회전에서 벗어나기 위한<br>
-        새로운 시도가 필요하다.</p>
-        <p>이는 단순한 탈출이 아니라<br>
-        근본적 변화를 의미하는 도전이다.</p>
+        <p>실현적 차원에서는 시스템적 회전에서 벗어나기 위한<br>새로운 시도가 필요하다.</p>
+        <p>이는 단순한 탈출이 아니라<br>근본적 변화를 의미하는 도전이다.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-06.png" alt="도형6">
-      </div>
+      <div class="left"><img src="c/partc-06.png" alt="도형6"></div>
       <div class="right">
         <div class="title">사회적 차원</div>
-        <p>사회적으로 시스템을 탈피해 서는 용기가 필요하다.<br>
-        새로운 관계와 새로운 규칙을 창조하며<br>
-        우리는 비로소 원판을 벗어날 수 있다.</p>
+        <p>사회적으로 시스템을 탈피해 서는 용기가 필요하다.<br>새로운 관계와 새로운 규칙을 창조하며<br>우리는 비로소 원판을 벗어날 수 있다.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-content">
-      <div class="left">
-        <img src="c/partc-07.png" alt="도형7">
-      </div>
+      <div class="left"><img src="c/partc-07.png" alt="도형7"></div>
       <div class="right">
-        <p>그러나 탈피 또한 또 다른 회전의 출발이 될 수 있다.<br>
-        변화와 회전은 동일한 궤적을 반복할 위험을 안고 있으며,<br>
-        이를 인식하는 시도가 진정한 변화로 이어진다.</p>
+        <p>그러나 탈피 또한 또 다른 회전의 출발이 될 수 있다.<br>변화와 회전은 동일한 궤적을 반복할 위험을 안고 있으며,<br>이를 인식하는 시도가 진정한 변화로 이어진다.</p>
       </div>
     </div>
   </section>
